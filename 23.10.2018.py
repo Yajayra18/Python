@@ -18,7 +18,7 @@ Emi = 25
 Ema = 45 
 
 #Edad de Postulante
-Ep = 48
+Ep = 45
 print ("el rango de edad de nuestras Haditas es de 25 a 45 años")
 print ("Respuesta a postulante de 48 años")
 
@@ -40,13 +40,31 @@ if Pos >= E:
 else:
 	print ("Lamentablemente no puede participar de la entrevista por no cumplir este segundo requisito")
 
-# if not Ep <= Emi and Ep >= Ema:
-# if  Ep <= Emi or Ep >= Ema:
+# if not (Ep <= Emi and Ep >= Ema)
+#Ep >= Emi
+# if  Ep < Emi or Ep > Ema:
 
-if  Ep <= Emi and Ep >= Ema:
+if  Ep < Emi or Ep > Ema:
 	print ("Lamentablemente no puede participar de la entrevista por no cumplir este primer requisito")
 elif Pos <= E:
 	print ("Lamentablemente no puede participar de la entrevista por no cumplir ambos requisito")
 else:
 	print ("Al cumplir ambos requisitos, la invitamos a participar de la entrevista")
 
+
+# por observar
+if not (Ep > Emi and Ep < Ema) and Pos < Ep:
+	print ("No puede participar de la entrevista")
+elif Ep < Emi and Ep > Ema and Pos < Ep:
+	print ("No puede participar de la entrevista")
+elif not (Ep < Emi and Ep > Ema) and Pos >= Ep:
+	print ("No puede participar de la entrevista")
+else: ("Puede participar de la entrevista")
+
+
+
+
+# una sola operación ok 
+if  Ep >= Emi and Ep <= Ema and Pos >= E:
+	print ("puede participar de la entrevista ")
+else: print("no Puede participar de la entrevista por no cumplir con los requisitos deseados")
