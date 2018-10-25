@@ -41,10 +41,10 @@ else:
 	print ("Lamentablemente no puede participar de la entrevista por no cumplir este segundo requisito")
 
 
-if Ep <= Emi and Ep >= Ema:
+if not Ep <= Emi and Ep >= Ema:
 	print ("Lamentablemente no puede participar de la entrevista por no cumplir este primer requisito")
 elif Pos <= E:
-	print ("Al cumplir ambos requisitos, la invitamos a participar de la entrevista")
-else:
 	print ("Lamentablemente no puede participar de la entrevista por no cumplir ambos requisito")
+else:
+	print ("Al cumplir ambos requisitos, la invitamos a participar de la entrevista")
 
