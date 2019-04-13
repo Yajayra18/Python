@@ -7,14 +7,15 @@
 #5 y20; 10y5; 5y5.
 
 def relacion(a,b):
-    print(a+b)
     if a > b:
         print (1)
-    if a < b:
+    elif a < b:
         print (-1)
-    if a == b:
+    elif a == b:
         print (0)
     else:
-        print (nothing)
+        print ("nothing")
 
-def relacion(1,2)
+relacion(5,20)
+relacion(10,5)
+relacion(5,5)
