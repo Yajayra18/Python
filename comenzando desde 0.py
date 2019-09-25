@@ -34,7 +34,7 @@ t = "Hola mundo, espero te ayude muchoe ste archivo - comenzando desde 0 "
 hoy = "frio" 
 if hoy is "frio":
    print ("me pondre una chompa")
-   else:
+else:
        print("No me pondre una chompa")
 
 
