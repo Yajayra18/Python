@@ -36,7 +36,7 @@ r = 80 // 7
 #esta funcion nos permitira obtener un texto (string)
 #escrito por el teclado.
 #Cuando se llegue a la funcion el programa se detendra
-#para recibir la información y se tomará esta an poner 
+#para recibir la informacion y se tomara esta  ponerlo con un 
 #"enter"
 
 print ("Hola soy Yajayra, ¿Cómo te llamas tú?")
