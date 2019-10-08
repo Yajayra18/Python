@@ -12,11 +12,18 @@ intermedio(-12, 24)
 #dos listas ordenadas. La primera con los numeros
 #pares y la segunda con los numeros impares.
 
-def separar(lista):
-    lista = (1,2,3,4,5,6,7,8,9,10)
-    print (range (lista))
-    
-separar(lista)
+#def separar(lista):
+    #lista = (1,2,3,4,5,6,7,8,9,10)
+    #print 
+
+#separar(lista)
+
+#Escriba un programa que pida la anchura 
+#y rectangulo y lo dibuje conc aracteres producto(*)
+
+input ("Anchura de rectangulo: ")
+while 
+input ("Altura del rectangulo: ")
 
 
 

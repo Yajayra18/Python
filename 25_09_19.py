@@ -59,11 +59,11 @@ print (desayuno [1:3])
 #TypeError: 'tuple' object does not support item assignment
 print(len(desayuno))
 #len cuenta la cantidad de elementos que hay en la tupla
-lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata Frita')
+breakfast = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata Frita')
 
-for comida in lanche:
-    print ('Yo voy a comer {comida}')
+for comida in breakfast:
+    print ('Yo voy a comer %s' %comida)
 print ('Que delicia')
 
-for cont in range (0, len(lanche)):
-    print(lanche[cont])
+for cont in range (0, len(breakfast)):
+    print(breakfast[cont])

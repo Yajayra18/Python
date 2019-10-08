@@ -1,0 +1,1 @@
+breakfast = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata Frita')

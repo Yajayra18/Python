@@ -12,4 +12,4 @@ while (numero_intentos < 3 and  respuesta_incorrecta):
         respuesta_incorrecta = False
     else:
         print ("La respuesta es incorrecta, intenta nuevamente")
-        numero_intentos += 1
+        numero_intentos += 1 
