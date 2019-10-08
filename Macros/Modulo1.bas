@@ -1,4 +1,4 @@
-Attribute VB_Name = "Módulo1"
+Attribute VB_Name = "Modulo1"
 Sub Enviar_Email()
 
 'Declaraciones de variables
@@ -17,11 +17,11 @@ Dim Msg As String
     'Asunto, el mismo para todos los correos
 Asunto = Worksheets("Hoja1").Range("B1").Value
 
-    'Bucle, la variable CeldaCorreo variará en cada celda del rango
+    'Bucle, la variable CeldaCorreo variarï¿½ en cada celda del rango
 For Each CeldaCorreo In Range("B6:B8")
   
         
-    'Asignación de valor a las variables, con respecto a la variable CeldaCorreo
+    'Asignaciï¿½n de valor a las variables, con respecto a la variable CeldaCorreo
        
     Correo = CeldaCorreo.Value
     Destinatario = CeldaCorreo.Offset(0, -1).Value
@@ -33,8 +33,8 @@ For Each CeldaCorreo In Range("B6:B8")
         
     Msg = "Estimado(a) " & Destinatario & "," & vbNewLine & vbNewLine
     Msg = Msg & "La presente es para recordarle"
-    Msg = Msg & "que hoy se llevará acabo el Programa Nutricional ViveRebien en la " & Sala & "."
-    Msg = Msg & " En su caso, la consulta será a las " & Hora & vbNewLine & vbNewLine
+    Msg = Msg & "que hoy se llevarï¿½ acabo el Programa Nutricional ViveRebien en la " & Sala & "."
+    Msg = Msg & " En su caso, la consulta serï¿½ a las " & Hora & vbNewLine & vbNewLine
     Msg = Msg & "Agradeceremos pueda asistir puntualmente," & vbNewLine
     Msg = Msg & "Saludos."
     
