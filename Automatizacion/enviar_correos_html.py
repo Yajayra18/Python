@@ -60,11 +60,12 @@ new_message.add_email("jkahn@imca.edu.pe")
 new_message.add_subject("Feliz cumpleaños")
 new_message.add_message("",True)
 
-
+"""
 with smtplib.SMTP(host, port) as server:
     server.starttls()
     server.login(new_message.From, pass_personal)
     server.sendmail(new_message.From, new_message.To, new_message.get_message().encode("utf8"))
     #server.quit()
+"""
 print("Mensaje enviado satisfactoriamente")
 
