@@ -44,7 +44,6 @@ except Exception as error:
 
 
 new_message = Mensaje(config["email"])
-#Mensaje.add_email(["carauco@cosapi.com.pe"])
 new_message.add_email("jkahn@imca.edu.pe")
 new_message.add_subject("Feliz cumpleaños")
 new_message.add_message_html(config["html"])
@@ -56,5 +55,7 @@ with smtplib.SMTP(host, port) as server:
     server.sendmail(new_message.From, new_message.To, new_message.get_message().encode("utf8"))
     #server.quit()
 """
+with open('config.json', 'w') as outfile:
+    json.dump(config, outfile, sort_keys=True, indent=4)
 print("Mensaje enviado satisfactoriamente")
 
