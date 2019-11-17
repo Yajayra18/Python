@@ -1,0 +1,10 @@
+{
+    "email": "titanico19@hotmail.com",
+    "host": {
+        "gmail":"smtp.gmail.com",
+        "outlook":"smtp.live.com"
+    },
+    "previous_host": "outlook",
+    "port": 587,
+    "html":"html/correo_html.html"
+}

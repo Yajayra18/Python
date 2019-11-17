@@ -1,64 +1,53 @@
 import smtplib
-#from bullet import Password
-#cli = Password("Contraseña: ")
-#p= cli.launch()
-#print(p)
+import getpass
+import bullet
+import sys
+import json
+import re
 
-# Clase mensaje
-class Mensaje:
-    # Constructor
-    def __init__(self,From):
-        self.From = From
-        self.To = []
-        self.Subject = ""
-        self.Message = ""
-        print("New Message was created.")
-    
-    def add_email(self,email):
-        self.To.append(email)
-    
-    def add_list_email(self,email):
-        self.To.append(email)
+from claseMensaje import Mensaje
 
-    def add_subject(self,subject):
-        self.Subject = subject
-
-    def add_message(self, message, html_flag):
-        if html_flag:
-            with open("./correo_html.html","r",encoding='utf-8') as html:
-                self.Message = html.read()
-        else:
-            self.Message = message
-    
-
-    def get_message(self):
-        temp = "Subject: %s\n"%self.Subject
-        temp += "From: %s\n"%self.From
-        temp += "To: "
-        for i in range(len(self.To)):
-            temp += "%s"%self.To[i]
-        temp += "\n"
-        temp += "Content-Type: text/html; charset=UTF-8\n\n"
-        temp += "%s"%self.Message
-
-        return temp
-
-# Configuracion de conexion
-host = "smtp.live.com"
-port = 587
+email_patron = re.compile(r'\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,6}\b')
+url_patron = re.compile(r"^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$")
+#configparser
+# Import previously config
+with open("config.json", "r") as config_file:
+    config = json.load(config_file)
 
 # Configuracion de correo(s)
-html = "./correo_html.html"
+html = "html/correo_html.html"
 
-mail_personal = "titanico19@hotmail.com"
-pass_personal = input("Cerrar terminal despues de ejecutar\nPassword: ")
+print("***** Send email *****")
+# Email
+while True:
+    temp_email = input("Login ([%s]): "%config["email"])
+    if temp_email != "":
+        if email_patron.match(temp_email):
+            config["email"] = temp_email
+            break
+        else:
+            print("WARNING: write an able email.")
+    else:
+        break
+
+# Password
+try:
+    if sys.platform == "linux":
+        cli = bullet.Password("Password: ")
+        pass_personal = cli.launch()
+    elif sys.platform == "win32":
+        pass_personal = getpass.getpass()
+except Exception as error: 
+    print('ERROR: ', error) 
+#else: 
+#    print('Password entered:', p) 
 
 
-new_message = Mensaje(mail_personal)
+new_message = Mensaje(config["email"])
 #Mensaje.add_email(["carauco@cosapi.com.pe"])
 new_message.add_email("jkahn@imca.edu.pe")
 new_message.add_subject("Feliz cumpleaños")
-new_message.add_message("",True)
+new_message.add_message_html(config["html"])
 
 """
 with smtplib.SMTP(host, port) as server:
