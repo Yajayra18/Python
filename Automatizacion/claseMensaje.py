@@ -15,7 +15,7 @@ class Mensaje:
         self.Subject = subject
     
     def add_message_html(self,html_file):
-        with open(html_file,"r",encoding='utf-8') as html:
+        with open("html/" + html_file, "r", encoding='utf-8') as html:
             self.MessageHTML = html.read()
     
 
