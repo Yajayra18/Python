@@ -46,16 +46,24 @@ with smtplib.SMTP(config["host"][config["host_opc"]], config["port"]) as server:
         print("WARNING: Could not login to the smtp server please check your username and password.")
         sys.exit(1)
     
+    
+    print("\n***** Email *****")
     # Message class
     new_message = Mensaje(config["email"])
 
-    print("\n***** Email *****")
-    # Subject
-    new_message.add_subject("Feliz cumpleaños")
     # To
     new_message.add_email("jkahn@imca.edu.pe")
-    # HTML
+    new_message.add_email("yajayra.arauco@gmail.com")
+    
+    # Subject
+    temp_subject = input("Subject: ")
+    if temp_subject == "":
+        temp = input("Are you sure that you want an empty subject? ( [y]/n ):")
+        if temp.upper() == "N":
+            temp_subject = input("Subject: ")
+    new_message.add_subject(temp_subject)
 
+    # HTML
     while True:
         temp_html = input("HTML ( [%s] ): "%config["html"])
         if temp_html != "":
@@ -68,12 +76,14 @@ with smtplib.SMTP(config["host"][config["host_opc"]], config["port"]) as server:
             break
     new_message.add_message_html(config["html"])
 
-    #server.sendmail(new_message.From, new_message.To, new_message.get_message().encode("utf8"))
+    # For
+    # opciones: oculto, personalizado, grupal
+    server.sendmail(new_message.From, new_message.To, new_message.get_message().encode("utf8"))
 
 # Save Configuration into json
 with open('config.json', 'w') as outfile:
-    print("Save configuration ... in process")
+    print("\nSave configuration ... in process")
     json.dump(config, outfile, sort_keys=True, indent=4)
-    print("Save configuration ... OK")
+    print("Save configuration ... OK\n")
 
-print("Mensaje enviado satisfactoriamente")
+print("Email sent successfully")

@@ -22,11 +22,8 @@ class Mensaje:
     def get_message(self):
         temp = "Subject: %s\n"%self.Subject
         temp += "From: %s\n"%self.From
-        temp += "To: "
-        for i in range(len(self.To)):
-            temp += "%s"%self.To[i]
-        temp += "\n"
+        temp += "To: " + ", ".join(self.To) + "\n"
+        #temp += "To: CaraMoco@hotmail.com\n"
         temp += "Content-Type: text/html; charset=UTF-8\n\n"
-        temp += "%s"%self.Message
-
+        temp += "%s"%self.MessageHTML
         return temp
